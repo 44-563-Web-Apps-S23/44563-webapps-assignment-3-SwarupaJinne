@@ -65,9 +65,8 @@
 <h1>Code Display</h1>
 
 <blockquote cite="https://stackoverflow.com/questions/19946972/wordpress-check-if-user-is-logged-in">WordPress - Check if user is logged in</blockquote>
-    
-<pre>
-    <div id="user-details">
+                    <pre>
+                <div id="user-details">
         <?php
            if (is_user_logged_in()) {
               $user = wp_get_current_user();
@@ -77,8 +76,8 @@
               or <a href="<?php echo get_option(’home’); ?>/wp-login.php?action=register"> <strong>Register</strong></a>
         <?php } ?>
         </div>
-</pre>
 
+                    </pre>
 
 
 
