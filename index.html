@@ -67,16 +67,14 @@
 
 <blockquote cite=“https://stackoverflow.com/questions/19946972/wordpress-check-if-user-is-logged-in”> quoted text </blockquote >             
 <pre>
-    <div id="user-details">
-        <?php
-           if (is_user_logged_in()) {
-              $user = wp_get_current_user();
-              echo ‘Welcome back <strong>’.$user->display_name.‘</strong> !’;
-           } else { ?>
-              Please <strong><?php wp_loginout(); ?></strong>
-              or <a href="<?php echo get_option(’home’); ?>/wp-login.php?action=register"> <strong>Register</strong></a>
-        <?php } ?>
-        </div>
+    <?php query_posts('cat=-3'); ?>
+
+    <?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+    <h3></h3>	
+    <p><?php the_time('F jS, Y') ?></p>
+    <?php the_content(); ?>
+    <?php endwhile; ?>
 </pre>
 
 
